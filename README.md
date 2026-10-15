@@ -25,6 +25,13 @@ kernel. At p = 1 the whole model runs as a recurrence with a fixed-size state: n
 Run it top to bottom with: `pip install -r requirements.txt`, then open in Jupyter (or
 upload to Google Colab; no GPU required).
 
+## Reproducing the experiments
+
+The notebook above is a self-contained demo. The actual experimental code behind the
+paper, including the original submission scripts, the corrected evaluation pipeline,
+the matched GLA baseline, and the held-out results of record, lives in
+[`experiments/`](experiments/) with its own README.
+
 ## Results at scale (from the paper, 184M parameters)
 
 - Exact recurrence verified on the trained model: parallel and recurrent agree within

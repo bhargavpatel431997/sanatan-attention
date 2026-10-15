@@ -1,5 +1,6 @@
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
+\documentclass{article}
+\PassOptionsToPackage{numbers,compress}{natbib}
+\usepackage[preprint]{neurips_2026}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{mathtools}
@@ -8,7 +9,6 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{graphicx}
-\usepackage{authblk}
 
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 
@@ -20,10 +20,13 @@
 
 \title{SANATAN\textsuperscript{*}: Root-Parity Gated Angular Attention \\ with an Exact Constant-State Recurrent Form}
 
-\author[ ]{Bhargav Patel}
-\affil[ ]{Independent Researcher, Greater Sudbury, Ontario, Canada}
-\affil[ ]{\texttt{b.patel.physics@gmail.com} \quad ORCID: 0009-0004-5429-2771}
-\date{}
+\author{
+  Bhargav Patel \\
+  Independent Researcher \\
+  Greater Sudbury, Ontario, Canada \\
+  \texttt{b.patel.physics@gmail.com} \\
+  \small{ORCID: 0009-0004-5429-2771}
+}
 
 \begin{document}
 \maketitle
@@ -235,6 +238,7 @@ We additionally disclose both mixture levels: the sampling weights (FineWeb 0.52
 \caption{Held-out loss on the common protocol (lower is better; final checkpoints unless noted). All models: 184M-parameter class, identical tokenizer, data mixture, optimizer, and schedule. Token budgets differ and are stated. $p{>}1$ SANATAN rows are fixed-context parallel models; only the $p{=}1$ row carries the $\cO(d^2)$ constant-state property.}
 \label{tab:results}
 \small
+\setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{llccl}
 \toprule
 Model & Deployment form & Tokens & Held-out loss & Notes \\
@@ -310,8 +314,9 @@ SANATAN derives a per-dimension binary gate from the two matrix roots of $i^2 = 
 
 \paragraph{Future work.} The follow-up architecture makes $\gamma$ learnable per head and dimension, removes the absolute positional embedding (making the recurrence valid at arbitrary position; verified exact at position offsets far beyond the trained context in preliminary implementation tests), and targets three questions in order: gate-construction ablations against learned, random, and hash gates; long-context evaluation under the exact recurrence; and, most importantly, whether root-parity interaction gating composes with the state-gating of modern architectures such as GLA, which our results identify as the stronger host.
 
-\section*{Acknowledgments}
+\begin{ack}
 The author thanks the Google TPU Research Cloud (TRC) program for complimentary Cloud TPU access, and the NeurIPS 2026 reviewers and area chair of the earlier version, whose unusually precise reviews directly shaped the corrections, measurements, and scoping adopted here.
+\end{ack}
 
 \bibliographystyle{unsrt}
 \begin{thebibliography}{10}

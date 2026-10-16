@@ -8,7 +8,7 @@ each dimension of a token softly picks one. Everything else follows from that.
 The equation i^2 = -1 has two orthogonal matrix solutions: a rotation by +90 degrees
 and a rotation by -90 degrees.
 
-$$i_+ = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \qquad i_- = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$$
+<p align="center"><img src="media/matrices.png" width="520" alt="The two matrix roots of -1"></p>
 
 Square either one and you get -I: both are genuine square roots of minus one, realized
 as real matrices. Picture a circle split into an i_plus half and an i_minus half.
@@ -17,10 +17,9 @@ as real matrices. Picture a circle split into an i_plus half and an i_minus half
 
 *The two roots i_plus and i_minus split the circle; a token's phase theta leans toward one.*
 
-Their continuous combination is S(theta) = cos(theta) i_plus + sin(theta) i_minus,
-which written out as a matrix is
+Their continuous combination, written out as a matrix, is
 
-$$S(\theta) = \begin{pmatrix} 0 & -(\cos\theta - \sin\theta) \\ \cos\theta - \sin\theta & 0 \end{pmatrix}$$
+<p align="center"><img src="media/s_theta.png" width="620" alt="S(theta) written out as a matrix"></p>
 
 so its off-diagonal entry is **+/-(cos theta - sin theta)**. Look closely at that
 expression: the combination cos theta - sin theta says which root the direction theta

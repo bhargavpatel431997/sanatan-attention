@@ -5,19 +5,24 @@ each dimension of a token softly picks one. Everything else follows from that.
 
 ## Two roots
 
-The equation i^2 = -1 has two orthogonal matrix solutions, i_plus and i_minus: a rotation
-by +90 degrees and by -90 degrees. Picture a circle split into an i_plus half and an
-i_minus half.
+The equation i^2 = -1 has two orthogonal matrix solutions: a rotation by +90 degrees
+and a rotation by -90 degrees.
+
+$$i_+ = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \qquad i_- = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$$
+
+Square either one and you get -I: both are genuine square roots of minus one, realized
+as real matrices. Picture a circle split into an i_plus half and an i_minus half.
 
 <p align="center"><img src="media/image1.png" width="320" alt="The two roots split the circle"></p>
 
 *The two roots i_plus and i_minus split the circle; a token's phase theta leans toward one.*
 
-Their continuous combination is
+Their continuous combination is S(theta) = cos(theta) i_plus + sin(theta) i_minus,
+which written out as a matrix is
 
-> S(theta) = cos(theta) * i_plus + sin(theta) * i_minus
+$$S(\theta) = \begin{pmatrix} 0 & -(\cos\theta - \sin\theta) \\ \cos\theta - \sin\theta & 0 \end{pmatrix}$$
 
-and its off-diagonal entry is **+/-(cos theta - sin theta)**. Look closely at that
+so its off-diagonal entry is **+/-(cos theta - sin theta)**. Look closely at that
 expression: the combination cos theta - sin theta says which root the direction theta
 leans toward (its sign flips at theta = pi/4), and the **+/- sitting in front of it is a
 binary object living inside a smooth formula**. That +/- is the key motivation for the

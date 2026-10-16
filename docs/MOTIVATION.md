@@ -17,9 +17,12 @@ Their continuous combination is
 
 > S(theta) = cos(theta) * i_plus + sin(theta) * i_minus
 
-and its off-diagonal entry is +/-(cos theta - sin theta). That combination
-**cos theta - sin theta** is where SANATAN's core quantity comes from: its sign says
-which root the direction theta leans toward (it flips at theta = pi/4).
+and its off-diagonal entry is **+/-(cos theta - sin theta)**. Look closely at that
+expression: the combination cos theta - sin theta says which root the direction theta
+leans toward (its sign flips at theta = pi/4), and the **+/- sitting in front of it is a
+binary object living inside a smooth formula**. That +/- is the key motivation for the
+whole architecture: SANATAN's central move is to take the +/- out front and promote it
+into an explicit quantity of its own, the root variable **r**.
 
 ## Content sets the angle
 
@@ -48,9 +51,11 @@ it but has no gradient, so we use **tanh**, which saturates smoothly to +/-1:
 
 > r = tanh( gamma * ( cos(theta + omega) - sin(theta + omega) ) ) ~ +/-1
 
-tanh gives a differentiable soft binary: gamma sets how sharply it snaps to +/-1, and the
-learned anchor omega shifts the split off the fixed pi/4 so the model can learn where to
-divide the circle.
+This is the +/- from the off-diagonal entry made concrete: r is nothing but the sign of
+(cos theta - sin theta), softened so gradients can flow. The +/- in front becomes r
+itself. tanh gives a differentiable soft binary: gamma sets how sharply it snaps to
++/-1, and the learned anchor omega shifts the split off the fixed pi/4 so the model can
+learn where to divide the circle.
 
 ## The feature map and the score
 

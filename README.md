@@ -11,6 +11,10 @@ kernel. At p = 1 the whole model runs as a recurrence with a fixed-size state: n
 
 **Where the idea comes from:** the origin story, from the two matrix roots of i^2 = -1 to the gated score, with worked figures: [docs/MOTIVATION.md](docs/MOTIVATION.md)
 
+## Architecture (V2)
+
+![SANATAN attention V2 block, end to end](assets/sanatan_architecture.png)
+
 ## What is in this repo
 
 `SANATAN_demo.ipynb` - a self-contained, CPU-runnable notebook (ships pre-executed) that:
